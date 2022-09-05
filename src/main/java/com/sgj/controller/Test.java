@@ -21,6 +21,7 @@ public class Test {
         String secret = GoogleAuthenticator.generateSecretKey();
         // 把这个qrcode生成二维码，用google身份验证器扫描二维码就能添加成功
         String qrcode = GoogleAuthenticator.getQRBarcode(username, secret);
+        // 通过 response 生成二维码，此方法需要使用 postman 或 apifox 实现才可看到二维码
         QrCodeUtil.createQrCodeByUrl(qrcode, response);
         log.info("qrcode:[{}],secret:[{}]", qrcode, secret);
     }
